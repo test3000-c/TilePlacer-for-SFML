@@ -2,5 +2,5 @@
 use a text file to place down tiles
 
 Please comment bugs 
-Plaease give feed back on how i should improve
+Please give feed back on how i should improve
 

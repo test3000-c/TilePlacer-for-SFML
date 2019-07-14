@@ -1,14 +1,13 @@
 #include "Tile.h"
 int main() {
-	Tile test("test.txt");
-	sf::Texture tile1;
-	tile1.loadFromFile("tile1.jpg");
-	sf::RectangleShape test2;
-	test2.setTexture(&tile1);
-	test2.setSize(sf::Vector2f(40.f,40.f));
-	test.defineChar('2', test2);
+	Tile tile("test.txt");
+	sf::RectangleShape rect;
+	rect.setFillColor(sf::Color::Green);
+	rect.setSize(sf::Vector2f(40.f,40.f));
+	tile.defineChar('2', rect);
+	tile.createTiles(40.f, 40.f);
 
-	sf::RenderWindow window(sf::VideoMode(800, 800), "SFML works!");
+	sf::RenderWindow window(sf::VideoMode(800, 800), "Tiles Work!");
 
 	while (window.isOpen())
 	{
@@ -18,9 +17,9 @@ int main() {
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
-		test.createTiles(40.f, 40.f);
+		
 		window.clear();
-		test.drawTiles(&window);
+		tile.drawTiles(&window);
 		window.display();
 	}
 

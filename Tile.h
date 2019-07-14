@@ -15,11 +15,11 @@ public:
 	void createTiles(float tileSizex, float tileSizeY);
 	void drawTiles(sf::RenderWindow *window);
 private:
-	std::string fName;
-	std::map<char, sf::RectangleShape> rectMap;
-	std::map<char, sf::Sprite> spriteMap;
-	std::list<sf::RectangleShape> rectList;
-	std::list<sf::Sprite> spriteList;
+	std::string fName; // your file name
+	std::map<char, sf::RectangleShape> rectMap; //what defineChar uses to assign your characters to tiles
+	std::map<char, sf::Sprite> spriteMap; //
+	std::list<sf::RectangleShape> rectList;//used in draw tiles to draw your rectangles
+	std::list<sf::Sprite> spriteList;//
 
 
 };

@@ -15,6 +15,8 @@ Tile::Tile(std::string FileName)
 Tile::~Tile()
 {
 }
+//the defineChar function is used to define characters in your text file 
+
 void Tile::defineChar(char ch, sf::RectangleShape rect) {
 	if (rectMap.find(ch) == rectMap.end() && spriteMap.find(ch) == spriteMap.end()) {  //checks if you already put in a character
 		rectMap.insert(std::pair<char, sf::RectangleShape>(ch, rect));  //inserts your char and rectangle into a map
@@ -32,7 +34,8 @@ void Tile::defineChar(char ch, sf::Sprite sprite) {
 		std::cout << "char has already been reserved" << std::endl;
 	}
 }
-
+//createTiles sets the tile position equivelent to were you placed your characters 
+//the first character is placed on 0,0 and tile size does not actaully set the size of your sprite/rectangle
 void Tile::createTiles(float tileSizex, float tileSizeY) {  //set the size for each tile 
 	                                                       //note: does not actaully change the size of your sprites and rectangles
 	char c;                                                //the char that is going to get the input from the file
@@ -68,7 +71,7 @@ void Tile::createTiles(float tileSizex, float tileSizeY) {  //set the size for e
 		}
 	}
 }
-
+//draws your tiles
 void Tile::drawTiles(sf::RenderWindow *window) {
 	std::list<sf::RectangleShape>::iterator Rit;
 	std::list<sf::Sprite>::iterator Sit;
